@@ -1,10 +1,9 @@
-function App() {
-  return (
-    <div className="bg-body mt-0">
-      <h1 className="text-center text-purple text-2xl py-[30px]">
-        Payment App
-      </h1>
+import { useNavigate } from "react-router-dom";
 
+function App() {
+  const navigate = useNavigate();
+  return (
+    <div className="bg-body flex flex-row">
       <div className="container mx-auto w-[400px] h-[700px] ">
         <div
           className="flex flex-col text-center mt-[100px]
@@ -18,7 +17,13 @@ function App() {
             <span className="text-[60px] text-pink md:font-bold">140e</span>
             <p>Placanje jedne rate</p>
             <div className="flex justify-center">
-              <button className="bg-yellow rounded-full w-[150px] h-[50px] mt-[50px]">
+              <button
+                onClick={() => {
+                  navigate("uplata");
+                }}
+                type="submit"
+                className="bg-yellow rounded-full w-[150px] h-[50px] mt-[50px]"
+              >
                 Detaljnije
               </button>
             </div>
