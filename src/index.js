@@ -5,7 +5,8 @@ import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 //pages
-import UplataComponent from "./components/UplataComponent";
+import UplataPage from "./pages/UplataPage";
+import AllUsers from "./pages/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/uplata",
-    element: <UplataComponent />,
+    element: <UplataPage />,
+  },
+  {
+    path: "/users",
+    element: <AllUsers />,
   },
 ]);
 

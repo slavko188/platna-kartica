@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
   return (
-    <div className="bg-body flex flex-row">
+    <div className=" bg-yellow flex flex-row">
       <div className="container mx-auto w-[400px] h-[700px] ">
         <div
-          className="flex flex-col text-center mt-[100px]
+          className="flex flex-col text-center mt-[50px]
          bg-akvacolor w-[400px] h-[500px] rounded-[20px] shadow-2xl shadow-cyan-500/70"
         >
           <div className="flex flex-col">
