@@ -1,7 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { payUsers } from "../store/userSlice";
+import { useNavigate } from "react-router-dom";
 
-function UplataPage() {
+function UplataComponent() {
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -11,8 +17,9 @@ function UplataPage() {
       brojKartice: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      dispatch(payUsers(values));
 
+      setTimeout(() => navigation("/paid"), 1000);
       formik.resetForm();
     },
   });
@@ -92,4 +99,4 @@ function UplataPage() {
   );
 }
 
-export default UplataPage;
+export default UplataComponent;
