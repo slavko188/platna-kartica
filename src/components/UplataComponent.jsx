@@ -1,15 +1,16 @@
 import React from "react";
 import { useFormik } from "formik";
-import { useDispatch } from "react-redux";
-import { payUsers } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { payPersons } from "../store/userSlice";
 
 function UplataComponent() {
-  const dispatch = useDispatch();
   const navigation = useNavigate();
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
+      id: "",
       firstName: "",
       lastName: "",
       email: "",
@@ -17,8 +18,7 @@ function UplataComponent() {
       brojKartice: "",
     },
     onSubmit: (values) => {
-      dispatch(payUsers(values));
-
+      dispatch(payPersons(values));
       setTimeout(() => navigation("/paid"), 1000);
       formik.resetForm();
     },
@@ -29,6 +29,17 @@ function UplataComponent() {
       <h1 className="text-2xl font-bold text-purple mb-3">UPLATNICA</h1>
       <div>
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-2">
+          <div>
+            <label className="font-bold">Id</label>
+            <input
+              type="number"
+              name="id"
+              value={formik.values.id}
+              onChange={formik.handleChange}
+              placeholder="insert id"
+              className=" flex flex-col border-2 border-purple rounded-[8px] py-1"
+            />
+          </div>
           {/* firstName */}
           <div>
             <label className="font-bold">First Name</label>
