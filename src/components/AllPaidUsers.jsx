@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { restorePerson } from "../store/userSlice";
 
-function AllPaidUsers() {
+const AllPaidUsers = () => {
   const { user } = useSelector((state) => state.userStore);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(restorePerson(JSON.parse(localStorage.getItem("PayUsers"))));
-  });
+  }, [dispatch]);
 
   return (
     <div>
@@ -16,17 +16,17 @@ function AllPaidUsers() {
         Svi uplatioci kursa
       </h1>
 
-      {user && (
-        <div>
-          <div>{user.firstName}</div>
-          <div>{user.lastName}</div>
-          <div>{user.email}</div>
-          <div>{user.city}</div>
-          <div>{user.brojKartice}</div>
+      <div className=" text-center">
+        <div className="flex flex-col text-2xl"> Ime:{user.firstName}</div>
+        <div className="flex flex-col text-2xl">Prezime:{user.lastName}</div>
+        <div className="flex flex-col text-2xl">Email:{user.email}</div>
+        <div className="flex flex-col text-2xl">Grad:{user.city}</div>
+        <div className="flex flex-col text-2xls">
+          Broj_Kartice:{user.brojKartice}
         </div>
-      )}
+      </div>
     </div>
   );
-}
+};
 
 export default AllPaidUsers;
