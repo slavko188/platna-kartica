@@ -17,12 +17,14 @@ const AllPaidUsers = () => {
       </h1>
 
       <div className=" text-center">
-        <div className="flex flex-col text-2xl"> Ime:{user.firstName}</div>
-        <div className="flex flex-col text-2xl">Prezime:{user.lastName}</div>
-        <div className="flex flex-col text-2xl">Email:{user.email}</div>
-        <div className="flex flex-col text-2xl">Grad:{user.city}</div>
-        <div className="flex flex-col text-2xls">
-          Broj_Kartice:{user.brojKartice}
+        <div>
+          <div className="flex flex-col text-2xl"> Ime:{user.firstName}</div>
+          <div className="flex flex-col text-2xl">Prezime:{user.lastName}</div>
+          <div className="flex flex-col text-2xl">Email:{user.email}</div>
+          <div className="flex flex-col text-2xl">Grad:{user.city}</div>
+          <div className="flex flex-col text-2xls">
+            Broj_Kartice:{user.brojKartice}
+          </div>
         </div>
       </div>
     </div>
